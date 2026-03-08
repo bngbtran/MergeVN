@@ -1,0 +1,173 @@
+{
+  "id": 52,
+  "name": "Bình Định",
+  "districts": [
+    {
+      "id": 540,
+      "name": "Thành phố Quy Nhơn",
+      "wards": [
+        { "id": 21553, "name": "Phường Nhơn Phú" },
+        { "id": 21559, "name": "Phường Trần Quang Diệu" },
+        { "id": 21556, "name": "Phường Đống Đa" },
+        { "id": 21562, "name": "Phường Hải Cảng" },
+        { "id": 21580, "name": "Phường Trần Phú" },
+        { "id": 21583, "name": "Phường Thị Nại" },
+        { "id": 21589, "name": "Phường Bùi Thị Xuân" },
+        { "id": 21991, "name": "Xã Phước Mỹ" },
+        { "id": 21565, "name": "Phường Quang Trung" },
+        { "id": 21577, "name": "Phường Ngô Mây" },
+        { "id": 21592, "name": "Phường Nguyễn Văn Cừ" },
+        { "id": 21595, "name": "Phường Ghềnh Ráng" },
+        { "id": 21550, "name": "Phường Nhơn Bình" },
+        { "id": 21598, "name": "Xã Nhơn Lý" },
+        { "id": 21601, "name": "Xã Nhơn Hội" },
+        { "id": 21604, "name": "Xã Nhơn Hải" }
+      ]
+    },
+    {
+      "id": 543,
+      "name": "Thị Xã Hoài Nhơn",
+      "wards": [
+        { "id": 21637, "name": "Phường Tam Quan" },
+        { "id": 21649, "name": "Xã Hoài Châu" },
+        { "id": 21640, "name": "Phường Bồng Sơn" },
+        { "id": 21685, "name": "Phường Hoài Đức" },
+        { "id": 21643, "name": "Xã Hoài Sơn" },
+        { "id": 21646, "name": "Xã Hoài Châu Bắc" },
+        { "id": 21655, "name": "Phường Tam Quan Bắc" },
+        { "id": 21652, "name": "Xã Hoài Phú" },
+        { "id": 21661, "name": "Phường Hoài Hảo" },
+        { "id": 21658, "name": "Phường Tam Quan Nam" },
+        { "id": 21664, "name": "Phường Hoài Thanh Tây" },
+        { "id": 21667, "name": "Phường Hoài Thanh" },
+        { "id": 21670, "name": "Phường Hoài Hương" },
+        { "id": 21676, "name": "Xã Hoài Hải" },
+        { "id": 21682, "name": "Xã Hoài Mỹ" },
+        { "id": 21673, "name": "Phường Hoài Tân" },
+        { "id": 21679, "name": "Phường Hoài Xuân" }
+      ]
+    },
+    {
+      "id": 549,
+      "name": "Thị Xã An Nhơn",
+      "wards": [
+        { "id": 21907, "name": "Phường Bình Định" },
+        { "id": 21931, "name": "Xã Nhơn Phúc" },
+        { "id": 21937, "name": "Xã Nhơn Khánh" },
+        { "id": 21910, "name": "Phường Đập Đá" },
+        { "id": 21913, "name": "Xã Nhơn Mỹ" },
+        { "id": 21922, "name": "Xã Nhơn Hậu" },
+        { "id": 21916, "name": "Phường Nhơn Thành" },
+        { "id": 21919, "name": "Xã Nhơn Hạnh" },
+        { "id": 21925, "name": "Xã Nhơn Phong" },
+        { "id": 21928, "name": "Xã Nhơn An" },
+        { "id": 21934, "name": "Phường Nhơn Hưng" },
+        { "id": 21943, "name": "Phường Nhơn Hòa" },
+        { "id": 21949, "name": "Xã Nhơn Thọ" }
+      ]
+    },
+    {
+      "id": 540,
+      "name": "Thành phố Quy Nhơn",
+      "wards": [
+        { "id": 21607, "name": "Xã Nhơn Châu" }
+      ]
+    },
+    {
+      "id": 542,
+      "name": "Huyện An Lão",
+      "wards": [
+        { "id": 21609, "name": "Thị trấn An Lão" },
+        { "id": 21610, "name": "Xã An Hưng" },
+        { "id": 21625, "name": "Xã An Tân" },
+        { "id": 21613, "name": "Xã An Trung" },
+        { "id": 21616, "name": "Xã An Dũng" },
+        { "id": 21619, "name": "Xã An Vinh" },
+        { "id": 21622, "name": "Xã An Toàn" },
+        { "id": 21634, "name": "Xã An Nghĩa" },
+        { "id": 21628, "name": "Xã An Hòa" },
+        { "id": 21631, "name": "Xã An Quang" }
+      ]
+    },
+    {
+      "id": 544,
+      "name": "Huyện Hoài Ân",
+      "wards": [
+        { "id": 21688, "name": "Thị trấn Tăng Bạt Hổ" },
+        { "id": 21709, "name": "Xã Ân Phong" },
+        { "id": 21712, "name": "Xã Ân Đức" },
+        { "id": 21724, "name": "Xã Ân Tường Đông" },
+        { "id": 21690, "name": "Xã Ân Hảo Tây" },
+        { "id": 21691, "name": "Xã Ân Hảo Đông" },
+        { "id": 21697, "name": "Xã Ân Mỹ" },
+        { "id": 21694, "name": "Xã Ân Sơn" },
+        { "id": 21703, "name": "Xã Ân Tín" },
+        { "id": 21706, "name": "Xã Ân Thạnh" },
+        { "id": 21700, "name": "Xã Đak Mang" },
+        { "id": 21715, "name": "Xã Ân Hữu" },
+        { "id": 21721, "name": "Xã Ân Tường Tây" },
+        { "id": 21718, "name": "Xã Bok Tới" },
+        { "id": 21727, "name": "Xã Ân Nghĩa" }
+      ]
+    },
+    {
+      "id": 545,
+      "name": "Huyện Phù Mỹ",
+      "wards": [
+        { "id": 21730, "name": "Thị trấn Phù Mỹ" },
+        { "id": 21733, "name": "Thị trấn Bình Dương" },
+        { "id": 21736, "name": "Xã Mỹ Đức" },
+        { "id": 21739, "name": "Xã Mỹ Châu" },
+        { "id": 21742, "name": "Xã Mỹ Thắng" },
+        { "id": 21745, "name": "Xã Mỹ Lộc" },
+        { "id": 21748, "name": "Xã Mỹ Lợi" },
+        { "id": 21751, "name": "Xã Mỹ An" },
+        { "id": 21754, "name": "Xã Mỹ Phong" },
+        { "id": 21757, "name": "Xã Mỹ Trinh" },
+        { "id": 21760, "name": "Xã Mỹ Thọ" },
+        { "id": 21763, "name": "Xã Mỹ Hòa" },
+        { "id": 21766, "name": "Xã Mỹ Thành" },
+        { "id": 21769, "name": "Xã Mỹ Chánh" },
+        { "id": 21772, "name": "Xã Mỹ Quang" },
+        { "id": 21775, "name": "Xã Mỹ Hiệp" },
+        { "id": 21778, "name": "Xã Mỹ Tài" },
+        { "id": 21781, "name": "Xã Mỹ Cát" },
+        { "id": 21784, "name": "Xã Mỹ Chánh Tây" }
+      ]
+    },
+    {
+      "id": 546,
+      "name": "Huyện Vĩnh Thạnh",
+      "wards": [
+        { "id": 21786, "name": "Thị trấn Vĩnh Thạnh" },
+        { "id": 21787, "name": "Xã Vĩnh Sơn" },
+        { "id": 21790, "name": "Xã Vĩnh Kim" },
+        { "id": 21796, "name": "Xã Vĩnh Hiệp" },
+        { "id": 21799, "name": "Xã Vĩnh Hảo" },
+        { "id": 21801, "name": "Xã Vĩnh Hòa" },
+        { "id": 21802, "name": "Xã Vĩnh Thịnh" },
+        { "id": 21804, "name": "Xã Vĩnh Thuận" },
+        { "id": 21805, "name": "Xã Vĩnh Quang" }
+      ]
+    },
+    {
+      "id": 547,
+      "name": "Huyện Tây Sơn",
+      "wards": [
+        { "id": 21808, "name": "Thị trấn Phú Phong" },
+        { "id": 21811, "name": "Xã Bình Tân" },
+        { "id": 21814, "name": "Xã Tây Thuận" },
+        { "id": 21817, "name": "Xã Bình Thuận" },
+        { "id": 21820, "name": "Xã Tây Giang" },
+        { "id": 21823, "name": "Xã Bình Thành" },
+        { "id": 21826, "name": "Xã Tây An" },
+        { "id": 21829, "name": "Xã Bình Hòa" },
+        { "id": 21832, "name": "Xã Tây Bình" },
+        { "id": 21835, "name": "Xã Bình Tường" },
+        { "id": 21838, "name": "Xã Tây Vinh" },
+        { "id": 21841, "name": "Xã Vĩnh An" },
+        { "id": 21844, "name": "Xã Tây Xuân" },
+        { "id": 21847, "name": "Xã Bình Nghi" },
+        { "id": 21850, "name": "Xã Tây Phú" }
+  ]
+}
