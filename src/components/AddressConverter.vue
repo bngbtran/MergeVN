@@ -14,17 +14,25 @@ const result = ref(null)
 
 onMounted(async () => {
 
-    const data = await (await fetch("/data/provinces.json")).json()
+    const base = import.meta.env.BASE_URL
+
+    const data = await (await fetch(`${base}data/provinces.json`)).json()
 
     provinces.value = data.sort((a, b) =>
         a.name.localeCompare(b.name, "vi")
     )
 
-    provinceData.value = await (await fetch("/data/binhdinh/binhdinh.json")).json()
+    provinceData.value = await (
+        await fetch(`${base}data/binhdinh/binhdinh.json`)
+    ).json()
 
-    mapData.value = await (await fetch("/data/binhdinh/binhdinh_mapping.json")).json()
+    mapData.value = await (
+        await fetch(`${base}data/binhdinh/binhdinh_mapping.json`)
+    ).json()
 
-    provinceMapping.value = await (await fetch("/data/province_mapping.json")).json()
+    provinceMapping.value = await (
+        await fetch(`${base}data/province_mapping.json`)
+    ).json()
 
 })
 
@@ -97,11 +105,6 @@ function resetForm() {
     result.value = null
 
 }
-
-watch(selectedProvince, () => {
-    selectedDistrict.value = null
-    selectedWard.value = null
-})
 
 watch(selectedDistrict, () => {
     selectedWard.value = null
