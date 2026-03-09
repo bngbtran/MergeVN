@@ -14,24 +14,22 @@ const result = ref(null)
 
 onMounted(async () => {
 
-    const base = import.meta.env.BASE_URL
-
-    const data = await (await fetch(`${base}data/provinces.json`)).json()
+    const data = await (await fetch('/data/provinces.json')).json()
 
     provinces.value = data.sort((a, b) =>
         a.name.localeCompare(b.name, "vi")
     )
 
     provinceData.value = await (
-        await fetch(`${base}data/binhdinh/binhdinh.json`)
+        await fetch('/data/binhdinh/binhdinh.json')
     ).json()
 
     mapData.value = await (
-        await fetch(`${base}data/binhdinh/binhdinh_mapping.json`)
+        await fetch('/data/binhdinh/binhdinh_mapping.json')
     ).json()
 
     provinceMapping.value = await (
-        await fetch(`${base}data/province_mapping.json`)
+        await fetch('/data/province_mapping.json')
     ).json()
 
 })
