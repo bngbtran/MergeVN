@@ -1,0 +1,255 @@
+{
+  "Phường Quy Nhơn Bắc": {
+    "id": 21553,
+    "old": ["Phường Nhơn Phú", "Phường Trần Quang Diệu"]
+  },
+  "Phường Quy Nhơn": {
+    "id": 21583,
+    "old": [
+      "Phường Đống Đa",
+      "Phường Hải Cảng",
+      "Phường Trần Phú",
+      "Phường Thị Nại"
+    ]
+  },
+  "Phường Quy Nhơn Tây": {
+    "id": 21589,
+    "old": ["Phường Bùi Thị Xuân", "Xã Phước Mỹ"]
+  },
+  "Phường Quy Nhơn Nam": {
+    "id": 21592,
+    "old": [
+      "Phường Quang Trung",
+      "Phường Ngô Mây",
+      "Phường Nguyễn Văn Cừ",
+      "Phường Ghềnh Ráng"
+    ]
+  },
+  "Phường Quy Nhơn Đông": {
+    "id": 21601,
+    "old": ["Phường Nhơn Bình", "Xã Nhơn Lý", "Xã Nhơn Hội", "Xã Nhơn Hải"]
+  },
+  "Phường Tam Quan": {
+    "id": 21637,
+    "old": ["Phường Tam Quan", "Xã Hoài Châu"]
+  },
+  "Phường Bồng Sơn": {
+    "id": 21640,
+    "old": ["Phường Bồng Sơn", "Phường Hoài Đức"]
+  },
+  "Phường Hoài Nhơn Bắc": {
+    "id": 21655,
+    "old": ["Xã Hoài Sơn", "Xã Hoài Châu Bắc", "Phường Tam Quan Bắc"]
+  },
+  "Phường Hoài Nhơn Tây": {
+    "id": 21661,
+    "old": ["Xã Hoài Phú", "Phường Hoài Hảo"]
+  },
+  "Phường Hoài Nhơn": {
+    "id": 21664,
+    "old": ["Phường Tam Quan Nam", "Phường Hoài Thanh Tây", "Phường Hoài Thanh"]
+  },
+  "Phường Hoài Nhơn Đông": {
+    "id": 21670,
+    "old": ["Phường Hoài Hương", "Xã Hoài Hải", "Xã Hoài Mỹ"]
+  },
+  "Phường Hoài Nhơn Nam": {
+    "id": 21673,
+    "old": ["Phường Hoài Tân", "Phường Hoài Xuân"]
+  },
+  "Phường Bình Định": {
+    "id": 21907,
+    "old": ["Phường Bình Định", "Xã Nhơn Phúc", "Xã Nhơn Khánh"]
+  },
+  "Phường An Nhơn": {
+    "id": 21910,
+    "old": ["Phường Đập Đá", "Xã Nhơn Mỹ", "Xã Nhơn Hậu"]
+  },
+  "Phường An Nhơn Bắc": {
+    "id": 21925,
+    "old": ["Phường Nhơn Thành", "Xã Nhơn Hạnh", "Xã Nhơn Phong"]
+  },
+  "Phường An Nhơn Đông": {
+    "id": 21934,
+    "old": ["Xã Nhơn An", "Phường Nhơn Hưng"]
+  },
+  "Phường An Nhơn Nam": {
+    "id": 21943,
+    "old": ["Phường Nhơn Hòa", "Xã Nhơn Thọ"]
+  },
+  "Xã Nhơn Châu": {
+    "id": 21607,
+    "old": ["Xã Nhơn Châu"]
+  },
+  "Xã An Lão": {
+    "id": 21609,
+    "old": ["Thị trấn An Lão", "Xã An Hưng", "Xã An Tân"]
+  },
+  "Xã An Vinh": {
+    "id": 21616,
+    "old": ["Xã An Trung", "Xã An Dũng", "Xã An Vinh"]
+  },
+  "Xã An Toàn": {
+    "id": 21622,
+    "old": ["Xã An Toàn"]
+  },
+  "Xã An Hòa": {
+    "id": 21628,
+    "old": ["Xã An Hòa", "Xã An Quang", "Xã An Nghĩa"]
+  },
+  "Xã Hoài Ân": {
+    "id": 21688,
+    "old": [
+      "Thị trấn Tăng Bạt Hổ",
+      "Xã Ân Phong",
+      "Xã Ân Đức",
+      "Xã Ân Tường Đông"
+    ]
+  },
+  "Xã Ân Hảo": {
+    "id": 21697,
+    "old": ["Xã Ân Hảo Tây", "Xã Ân Hảo Đông", "Xã Ân Mỹ"]
+  },
+  "Xã Vạn Đức": {
+    "id": 21703,
+    "old": ["Xã Ân Sơn", "Xã Ân Tín", "Xã Ân Thạnh"]
+  },
+  "Xã Ân Tường": {
+    "id": 21715,
+    "old": ["Xã Đăk Mang", "Xã Ân Hữu", "Xã Ân Tường Tây"]
+  },
+  "Xã Kim Sơn": {
+    "id": 21727,
+    "old": ["Xã Bok Tới", "Xã Ân Nghĩa"]
+  },
+  "Xã Phù Mỹ": {
+    "id": 21730,
+    "old": ["Thị trấn Phù Mỹ", "Xã Mỹ Quang", "Xã Mỹ Chánh Tây"]
+  },
+  "Xã Bình Dương": {
+    "id": 21733,
+    "old": ["Thị trấn Bình Dương", "Xã Mỹ Lợi", "Xã Mỹ Phong"]
+  },
+  "Xã Phù Mỹ Bắc": {
+    "id": 21739,
+    "old": ["Xã Mỹ Đức", "Xã Mỹ Châu", "Xã Mỹ Lộc"]
+  },
+  "Xã Phù Mỹ Đông": {
+    "id": 21751,
+    "old": ["Xã Mỹ Thắng", "Xã Mỹ An", "Xã Mỹ Thọ"]
+  },
+  "Xã Phù Mỹ Tây": {
+    "id": 21757,
+    "old": ["Xã Mỹ Trinh", "Xã Mỹ Hòa"]
+  },
+  "Xã An Lương": {
+    "id": 21769,
+    "old": ["Xã Mỹ Thành", "Xã Mỹ Chánh", "Xã Mỹ Cát"]
+  },
+  "Xã Phù Mỹ Nam": {
+    "id": 21775,
+    "old": ["Xã Mỹ Hiệp", "Xã Mỹ Tài"]
+  },
+  "Xã Vĩnh Thạnh": {
+    "id": 21786,
+    "old": ["Thị trấn Vĩnh Thạnh", "Xã Vĩnh Hảo"]
+  },
+  "Xã Vĩnh Sơn": {
+    "id": 21787,
+    "old": ["Xã Vĩnh Sơn", "Xã Vĩnh Kim"]
+  },
+  "Xã Vĩnh Thịnh": {
+    "id": 21796,
+    "old": ["Xã Vĩnh Hiệp", "Xã Vĩnh Thịnh"]
+  },
+  "Xã Vĩnh Quang": {
+    "id": 21805,
+    "old": ["Xã Vĩnh Hòa", "Xã Vĩnh Thuận", "Xã Vĩnh Quang"]
+  },
+  "Xã Tây Sơn": {
+    "id": 21808,
+    "old": ["Thị trấn Phú Phong", "Xã Tây Xuân", "Xã Bình Nghi"]
+  },
+  "Xã Bình Hiệp": {
+    "id": 21817,
+    "old": ["Xã Bình Tân", "Xã Bình Thuận", "Xã Tây An"]
+  },
+  "Xã Bình Khê": {
+    "id": 21820,
+    "old": ["Xã Tây Thuận", "Xã Tây Giang"]
+  },
+  "Xã Bình An": {
+    "id": 21829,
+    "old": ["Xã Bình Thành", "Xã Bình Hòa", "Xã Tây Bình", "Xã Tây Vinh"]
+  },
+  "Xã Bình Phú": {
+    "id": 21835,
+    "old": ["Xã Bình Tường", "Xã Vĩnh An", "Xã Tây Phú"]
+  },
+  "Xã Phù Cát": {
+    "id": 21853,
+    "old": ["Thị trấn Ngô Mây", "Xã Cát Trinh", "Xã Cát Tân"]
+  },
+  "Xã Đề Gi": {
+    "id": 21859,
+    "old": ["Xã Cát Minh", "Thị trấn Cát Khánh", "Xã Cát Tài"]
+  },
+  "Xã Hội Sơn": {
+    "id": 21868,
+    "old": ["Xã Cát Sơn", "Xã Cát Lâm"]
+  },
+  "Xã Hòa Hội": {
+    "id": 21871,
+    "old": ["Xã Cát Hanh", "Xã Cát Hiệp"]
+  },
+  "Xã Cát Tiến": {
+    "id": 21880,
+    "old": ["Xã Cát Thành", "Xã Cát Hải", "Thị trấn Cát Tiến"]
+  },
+  "Xã Xuân An": {
+    "id": 21892,
+    "old": ["Xã Cát Nhơn", "Xã Cát Tường"]
+  },
+  "Xã Ngô Mây": {
+    "id": 21901,
+    "old": ["Xã Cát Hưng", "Xã Cát Thắng", "Xã Cát Chánh"]
+  },
+  "Xã An Nhơn Tây": {
+    "id": 21940,
+    "old": ["Xã Nhơn Lộc", "Xã Nhơn Tân"]
+  },
+  "Xã Tuy Phước": {
+    "id": 21952,
+    "old": [
+      "Thị trấn Tuy Phước",
+      "Thị trấn Diêu Trì",
+      "Xã Phước Lộc",
+      "Xã Phước Nghĩa",
+      "Xã Phước Thuận"
+    ]
+  },
+  "Xã Tuy Phước Bắc": {
+    "id": 21964,
+    "old": ["Xã Phước Hưng", "Xã Phước Quang", "Xã Phước Hiệp"]
+  },
+  "Xã Tuy Phước Đông": {
+    "id": 21970,
+    "old": ["Xã Phước Thắng", "Xã Phước Hòa", "Xã Phước Sơn"]
+  },
+  "Xã Tuy Phước Tây": {
+    "id": 21985,
+    "old": ["Xã Phước An", "Xã Phước Thành"]
+  },
+  "Xã Vân Canh": {
+    "id": 21994,
+    "old": ["Thị trấn Vân Canh", "Xã Canh Hiệp", "Xã Canh Thuận", "Xã Canh Hòa"]
+  },
+  "Xã Canh Liên": {
+    "id": 21997,
+    "old": ["Xã Canh Liên"]
+  },
+  "Xã Canh Vinh": {
+    "id": 22006,
+    "old": ["Xã Canh Liên", "Xã Canh Hiệp", "Xã Canh Vinh", "Xã Canh Hiển"]
+  }
+}

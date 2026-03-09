@@ -21,7 +21,8 @@
         { "id": 21550, "name": "Phường Nhơn Bình" },
         { "id": 21598, "name": "Xã Nhơn Lý" },
         { "id": 21601, "name": "Xã Nhơn Hội" },
-        { "id": 21604, "name": "Xã Nhơn Hải" }
+        { "id": 21604, "name": "Xã Nhơn Hải" },
+        { "id": 21607, "name": "Xã Nhơn Châu" }
       ]
     },
     {
@@ -34,7 +35,7 @@
         { "id": 21685, "name": "Phường Hoài Đức" },
         { "id": 21643, "name": "Xã Hoài Sơn" },
         { "id": 21646, "name": "Xã Hoài Châu Bắc" },
-        { "id": 21655, "name": "Phường Tam Quan Bắc" },
+        { "id": 21655, "name": "Phường Tam Quan" },
         { "id": 21652, "name": "Xã Hoài Phú" },
         { "id": 21661, "name": "Phường Hoài Hảo" },
         { "id": 21658, "name": "Phường Tam Quan Nam" },
@@ -63,14 +64,9 @@
         { "id": 21928, "name": "Xã Nhơn An" },
         { "id": 21934, "name": "Phường Nhơn Hưng" },
         { "id": 21943, "name": "Phường Nhơn Hòa" },
-        { "id": 21949, "name": "Xã Nhơn Thọ" }
-      ]
-    },
-    {
-      "id": 540,
-      "name": "Thành phố Quy Nhơn",
-      "wards": [
-        { "id": 21607, "name": "Xã Nhơn Châu" }
+        { "id": 21949, "name": "Xã Nhơn Thọ" },
+        { "id": 21940, "name": "Xã Nhơn Lộc" },
+        { "id": 21946, "name": "Xã Nhơn Tân" }
       ]
     },
     {
@@ -169,5 +165,63 @@
         { "id": 21844, "name": "Xã Tây Xuân" },
         { "id": 21847, "name": "Xã Bình Nghi" },
         { "id": 21850, "name": "Xã Tây Phú" }
+      ]
+    },
+    {
+      "id": 548,
+      "name": "Huyện Phù Cát",
+      "wards": [
+        { "id": 21853, "name": "Thị trấn Ngô Mây" },
+        { "id": 21877, "name": "Xã Cát Trinh" },
+        { "id": 21895, "name": "Xã Cát Tân" },
+        { "id": 21859, "name": "Xã Cát Minh" },
+        { "id": 21862, "name": "Thị trấn Cát Khánh" },
+        { "id": 21865, "name": "Xã Cát Tài" },
+        { "id": 21856, "name": "Xã Cát Sơn" },
+        { "id": 21868, "name": "Xã Cát Lâm" },
+        { "id": 21871, "name": "Xã Cát Hanh" },
+        { "id": 21883, "name": "Xã Cát Hiệp" },
+        { "id": 21874, "name": "Xã Cát Thành" },
+        { "id": 21880, "name": "Xã Cát Hải" },
+        { "id": 21898, "name": "Thị trấn Cát Tiến" },
+        { "id": 21886, "name": "Xã Cát Nhơn" },
+        { "id": 21892, "name": "Xã Cát Tường" },
+        { "id": 21889, "name": "Xã Cát Hưng" },
+        { "id": 21901, "name": "Xã Cát Thắng" },
+        { "id": 21904, "name": "Xã Cát Chánh" }
+      ]
+    },
+    {
+      "id": 550,
+      "name": "Huyện Tuy Phước",
+      "wards": [
+        { "id": 21952, "name": "Thị trấn Tuy Phước" },
+        { "id": 21955, "name": "Thị trấn Diêu Trì" },
+        { "id": 21976, "name": "Xã Phước Lộc" },
+        { "id": 21979, "name": "Xã Phước Nghĩa" },
+        { "id": 21982, "name": "Xã Phước Thuận" },
+        { "id": 21961, "name": "Xã Phước Hưng" },
+        { "id": 21964, "name": "Xã Phước Quang" },
+        { "id": 21973, "name": "Xã Phước Hiệp" },
+        { "id": 21958, "name": "Xã Phước Thắng" },
+        { "id": 21967, "name": "Xã Phước Hòa" },
+        { "id": 21970, "name": "Xã Phước Sơn" },
+        { "id": 21985, "name": "Xã Phước An" },
+        { "id": 21988, "name": "Xã Phước Thành" }
+      ]
+    },
+    {
+      "id": 551,
+      "name": "Huyện Vân Canh",
+      "wards": [
+        { "id": 21994, "name": "Thị trấn Vân Canh" },
+        { "id": 22000, "name": "Xã Canh Hiệp" },
+        { "id": 22009, "name": "Xã Canh Thuận" },
+        { "id": 22012, "name": "Xã Canh Hòa" },
+        { "id": 21997, "name": "Xã Canh Liên" },
+        { "id": 22003, "name": "Xã Canh Vinh" },
+        { "id": 22006, "name": "Xã Canh Hiển" }
+      ]
+    }
   ]
 }
