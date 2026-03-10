@@ -202,18 +202,18 @@ watch(selectedDistrict, () => {
     </div>
 
     <div v-if="result" class="card mt-4">
-        <div class="font-semibold text-xl mb-3">Kết quả chuyển đổi</div>
+        <div class="text-2xl font-bold text-primary mb-3">Kết quả chuyển đổi</div>
 
         <DataTable :value="tableResult" showGridlines responsiveLayout="scroll">
-            <Column field="oldAddress" header="Địa chỉ cũ">
+            <Column field="oldAddress" header="Địa chỉ cũ" headerClass="font-bold">
                 <template #body="{ data }">
-                    <span class="text-gray-600">
+                    <span class="font-medium text-secondary">
                         {{ data.oldAddress }}
                     </span>
                 </template>
             </Column>
 
-            <Column field="newAddress" header="Địa chỉ mới">
+            <Column field="newAddress" header="Địa chỉ mới" headerClass="font-bold">
                 <template #body="{ data }">
                     <span class="font-bold text-primary">
                         {{ data.newAddress }}
