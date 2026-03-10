@@ -3,8 +3,11 @@ import Button from 'primevue/button';
 import Column from 'primevue/column';
 import DataTable from 'primevue/datatable';
 import Select from 'primevue/select';
+import { useToast } from 'primevue/usetoast';
 import { computed, onMounted, ref, watch } from 'vue';
 import * as XLSX from 'xlsx';
+
+const toast = useToast();
 
 const rows = ref([]);
 
@@ -52,12 +55,15 @@ function normalizeProvince(name) {
 
 function buildIndexes() {
     rows.value.forEach((row) => {
-        const fullProvince = row['Tỉnh, thành phố']; // giữ nguyên
+        const fullProvince = row['Tỉnh, thành phố'].replace(/\s*\(\d+\)$/, '').trim();
+
         const oldProvince = normalizeProvince(row['Tỉnh cũ']);
 
         const district = row['Quận/huyện'].replace(/\s*\(\d+\)$/, '').trim();
+
         const oldWard = row['Tên Xã cũ'];
-        const newWard = row['Tên Xã mới'];
+
+        const newWard = row['Tên Xã mới'].replace(/\s*\(\d+\)$/, '').trim();
 
         provinceMap.value[oldProvince] = fullProvince;
 
@@ -79,6 +85,7 @@ function buildIndexes() {
         provinceDistrictWard.value[oldProvince][district].push(oldWard);
     });
 }
+
 onMounted(loadExcel);
 
 const provinces = computed(() => {
@@ -102,6 +109,16 @@ const wards = computed(() => {
 });
 
 function convertAddress() {
+    if (!selectedProvince.value || !selectedDistrict.value || !selectedWard.value) {
+        toast.add({
+            severity: 'warn',
+            summary: 'Thiếu thông tin',
+            detail: 'Vui lòng chọn đầy đủ tỉnh, huyện, xã',
+            life: 3000
+        });
+        return;
+    }
+
     const oldProvince = selectedProvince.value.name;
     const oldDistrict = selectedDistrict.value.name;
     const oldWard = selectedWard.value.name;
@@ -111,9 +128,25 @@ function convertAddress() {
     const data = wardMap.value[key];
 
     if (data) {
-        result.value = `${data.ward}, ${data.province}`;
+        const provinceClean = data.province.replace(/\s*\(\d+\)/, '');
+
+        result.value = `${data.ward}, ${provinceClean}`;
+
+        toast.add({
+            severity: 'success',
+            summary: 'Chuyển đổi thành công',
+            detail: 'Đã chuyển đổi địa chỉ thành công',
+            life: 3000
+        });
     } else {
         result.value = 'Không tìm thấy địa chỉ mới';
+
+        toast.add({
+            severity: 'error',
+            summary: 'Không tìm thấy',
+            detail: 'Không có dữ liệu địa chỉ mới',
+            life: 3000
+        });
     }
 }
 
@@ -122,6 +155,13 @@ function resetForm() {
     selectedDistrict.value = null;
     selectedWard.value = null;
     result.value = null;
+
+    toast.add({
+        severity: 'info',
+        summary: 'Đã xóa',
+        detail: 'Form đã được làm mới',
+        life: 2000
+    });
 }
 
 watch(selectedProvince, () => {
@@ -137,6 +177,8 @@ watch(selectedDistrict, () => {
 </script>
 
 <template>
+    <Toast />
+
     <div class="card flex flex-col gap-4">
         <div class="text-2xl font-bold text-primary">Chuyển đổi địa chỉ</div>
 
@@ -159,9 +201,9 @@ watch(selectedDistrict, () => {
         </div>
 
         <div class="flex gap-2">
-            <Button label="Convert" icon="pi pi-sync" @click="convertAddress" />
+            <Button label="Chuyển đổi" icon="pi pi-sync" @click="convertAddress" />
 
-            <Button label="Reset" severity="secondary" icon="pi pi-refresh" @click="resetForm" />
+            <Button label="Xóa" severity="secondary" icon="pi pi-refresh" @click="resetForm" />
         </div>
     </div>
 

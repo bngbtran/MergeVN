@@ -20,7 +20,7 @@ const model = ref([
             {
                 label: 'Đề xuất chỉnh sửa',
                 icon: 'pi pi-file-edit',
-                to: 'suggest'
+                to: '/suggest'
             },
             {
                 label: 'Liên hệ',
