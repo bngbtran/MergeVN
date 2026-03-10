@@ -13,9 +13,17 @@
 
 # Demo
 
-Website: `https://tranbnb-mergevn.vercel.app/`
+Website:
 
-APK Android: `/public/apk/mergevn.apk`
+```
+https://tranbnb-mergevn.vercel.app/
+```
+
+APK Android:
+
+```
+/public/apk/mergevn.apk
+```
 
 ---
 
