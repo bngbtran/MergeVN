@@ -11,6 +11,7 @@ export default defineConfig({
     optimizeDeps: {
         noDiscovery: true
     },
+    assetsInclude: ['**/*.xlsx'],
     plugins: [
         vue(),
         tailwindcss(),

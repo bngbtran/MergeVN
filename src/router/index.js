@@ -14,10 +14,6 @@ const router = createRouter({
                     component: () => import('@/views/pages/AddressConverter.vue')
                 },
                 {
-                    path: '/suggest',
-                    component: () => import('@/views/pages/Suggest.vue')
-                },
-                {
                     path: '/contact',
                     component: () => import('@/views/pages/Contact.vue')
                 },

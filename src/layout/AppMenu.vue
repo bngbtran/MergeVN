@@ -4,23 +4,12 @@ import AppMenuItem from './AppMenuItem.vue';
 
 const model = ref([
     {
-        label: 'Trang chủ',
+        label: 'MERGEVN',
         items: [
             {
                 label: 'Chuyển đổi địa chỉ',
                 icon: 'pi pi-fw pi-home',
                 to: '/'
-            }
-        ]
-    },
-    {
-        label: 'Thông tin chung',
-        path: '/start',
-        items: [
-            {
-                label: 'Đề xuất chỉnh sửa',
-                icon: 'pi pi-file-edit',
-                to: '/suggest'
             },
             {
                 label: 'Liên hệ',

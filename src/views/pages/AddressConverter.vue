@@ -5,7 +5,6 @@ import DataTable from 'primevue/datatable';
 import Select from 'primevue/select';
 import { useToast } from 'primevue/usetoast';
 import { computed, onMounted, ref, watch } from 'vue';
-import * as XLSX from 'xlsx';
 
 const toast = useToast();
 
@@ -32,15 +31,10 @@ const tableResult = computed(() => {
     ];
 });
 
-async function loadExcel() {
-    const res = await fetch('/data/address.xlsx');
-    const buffer = await res.arrayBuffer();
+async function loadData() {
+    const res = await fetch('/data/address.json');
 
-    const workbook = XLSX.read(buffer);
-
-    const sheet = workbook.Sheets[workbook.SheetNames[0]];
-
-    rows.value = XLSX.utils.sheet_to_json(sheet);
+    rows.value = await res.json();
 
     buildIndexes();
 }
@@ -55,15 +49,15 @@ function normalizeProvince(name) {
 
 function buildIndexes() {
     rows.value.forEach((row) => {
-        const fullProvince = row['Tỉnh, thành phố'].replace(/\s*\(\d+\)$/, '').trim();
+        const fullProvince = row.province.replace(/\s*\(\d+\)$/, '').trim();
 
-        const oldProvince = normalizeProvince(row['Tỉnh cũ']);
+        const oldProvince = normalizeProvince(row.oldProvince);
 
-        const district = row['Quận/huyện'].replace(/\s*\(\d+\)$/, '').trim();
+        const district = row.district.replace(/\s*\(\d+\)$/, '').trim();
 
-        const oldWard = row['Tên Xã cũ'];
+        const oldWard = row.oldWard;
 
-        const newWard = row['Tên Xã mới'].replace(/\s*\(\d+\)$/, '').trim();
+        const newWard = row.newWard.replace(/\s*\(\d+\)$/, '').trim();
 
         provinceMap.value[oldProvince] = fullProvince;
 
@@ -86,7 +80,7 @@ function buildIndexes() {
     });
 }
 
-onMounted(loadExcel);
+onMounted(loadData);
 
 const provinces = computed(() => {
     return Object.keys(provinceDistrictWard.value)
@@ -200,7 +194,7 @@ watch(selectedDistrict, () => {
             <Select v-model="selectedWard" :options="wards" optionLabel="name" placeholder="Chọn xã" filter class="w-full mt-3" />
         </div>
 
-        <div class="flex gap-2">
+        <div class="flex gap-2 mt-2">
             <Button label="Chuyển đổi" icon="pi pi-sync" @click="convertAddress" />
 
             <Button label="Xóa" severity="secondary" icon="pi pi-refresh" @click="resetForm" />
