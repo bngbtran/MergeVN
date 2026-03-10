@@ -1,81 +1,113 @@
 <script setup>
 import { ref, computed, onMounted, watch } from "vue"
+import * as XLSX from "xlsx"
 
-const provinces = ref([])
-const provinceData = ref(null)
-const mapData = ref(null)
+const rows = ref([])
 
 const selectedProvince = ref(null)
 const selectedDistrict = ref(null)
 const selectedWard = ref(null)
-const provinceMapping = ref(null)
 
 const result = ref(null)
 
+const provinceDistrictWard = ref({})
+const provinceMap = ref({})
+const wardMap = ref({})
+
+async function loadExcel() {
+
+    const res = await fetch("/data/address.xlsx")
+    const buffer = await res.arrayBuffer()
+
+    const workbook = XLSX.read(buffer)
+
+    const sheet = workbook.Sheets[workbook.SheetNames[0]]
+
+    rows.value = XLSX.utils.sheet_to_json(sheet)
+
+    buildIndexes()
+
+}
+
+function normalizeProvince(name) {
+
+    return name
+        .replace(/\s*\(\d+\)$/, "") // bỏ (01)
+        .replace(/^Tỉnh\s+/i, "")   // bỏ "Tỉnh "
+        .replace(/^Thành phố\s+/i, "") // bỏ "Thành phố "
+        .trim()
+
+}
+
+function buildIndexes() {
+
+    rows.value.forEach(row => {
+
+        const newProvince = row["Tỉnh, thành phố"]
+        const oldProvince = normalizeProvince(row["Tỉnh cũ"])
+        const district = row["Quận/huyện"].replace(/\s*\(\d+\)$/, "").trim()
+        const oldWard = row["Tên Xã cũ"]
+        const newWard = row["Tên Xã mới"]
+
+        provinceMap.value[oldProvince] = newProvince
+        const key = `${oldProvince}|${district}|${oldWard}`
+        wardMap.value[key] = newWard
+
+        if (!provinceDistrictWard.value[oldProvince]) {
+            provinceDistrictWard.value[oldProvince] = {}
+        }
+
+        if (!provinceDistrictWard.value[oldProvince][district]) {
+            provinceDistrictWard.value[oldProvince][district] = []
+        }
+
+        provinceDistrictWard.value[oldProvince][district].push(oldWard)
+
+    })
+
+}
+
 onMounted(async () => {
+    await loadExcel()
+})
 
-    const data = await (await fetch('/data/provinces.json')).json()
+const provinces = computed(() => {
 
-    provinces.value = data.sort((a, b) =>
-        a.name.localeCompare(b.name, "vi")
-    )
-
-    provinceMapping.value = await (
-        await fetch('/data/province_mapping.json')
-    ).json()
+    return Object
+        .keys(provinceDistrictWard.value)
+        .sort((a, b) => a.localeCompare(b, "vi"))
 
 })
 
 const districts = computed(() => {
 
-    if (!selectedProvince.value || !provinceData.value) return []
+    if (!selectedProvince.value) return []
 
-    return provinceData.value.districts
+    return Object
+        .keys(provinceDistrictWard.value[selectedProvince.value] || {})
+        .sort((a, b) => a.localeCompare(b, "vi"))
 
 })
 
 const wards = computed(() => {
 
-    if (!selectedDistrict.value) return []
+    if (!selectedProvince.value || !selectedDistrict.value) return []
 
-    return selectedDistrict.value.wards
+    return [...provinceDistrictWard.value[selectedProvince.value][selectedDistrict.value]]
+        .sort((a, b) => a.localeCompare(b, "vi"))
 
 })
-
 function convertAddress() {
 
-    if (!selectedWard.value || !selectedProvince.value) return
+    const oldProvince = selectedProvince.value
+    const oldWard = selectedWard.value
 
-    const wardName = selectedWard.value.name
-    const oldProvince = selectedProvince.value.name
-
-    let newWard = null
-    let newProvince = null
-
-    // tìm xã mới
-    for (const [ward, info] of Object.entries(mapData.value)) {
-
-        if (info.old.includes(wardName)) {
-            newWard = ward
-            break
-        }
-
-    }
-
-    // tìm tỉnh mới
-    for (const [province, info] of Object.entries(provinceMapping.value)) {
-
-        if (info.old.includes(oldProvince)) {
-            newProvince = province
-            break
-        }
-
-    }
+    const newProvince = provinceMap.value[oldProvince]
+    const key = `${selectedProvince.value}|${selectedDistrict.value}|${selectedWard.value}`
+    const newWard = wardMap.value[key]
 
     if (newWard && newProvince) {
         result.value = `${newWard}, ${newProvince}`
-    } else if (newWard) {
-        result.value = `${newWard}, ${oldProvince}`
     } else {
         result.value = "Không tìm thấy địa chỉ mới"
     }
@@ -87,48 +119,23 @@ function resetForm() {
     selectedProvince.value = null
     selectedDistrict.value = null
     selectedWard.value = null
-
     result.value = null
 
-}
 
-function toSlug(name) {
-    return name
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "")
-        .replace(/đ/g, "d")
-        .replace(/\s+/g, "")
 }
-
-watch(selectedDistrict, () => {
-    selectedWard.value = null
-    result.value = null
-})
 
 watch(selectedProvince, () => {
+
     selectedDistrict.value = null
     selectedWard.value = null
     result.value = null
+
 })
 
-watch(selectedProvince, async (province) => {
+watch(selectedDistrict, () => {
 
-    selectedDistrict.value = null
     selectedWard.value = null
     result.value = null
-
-    if (!province) return
-
-    const slug = toSlug(province.name)
-
-    provinceData.value = await (
-        await fetch(`/data/${slug}/${slug}.json`)
-    ).json()
-
-    mapData.value = await (
-        await fetch(`/data/${slug}/${slug}_mapping.json`)
-    ).json()
 
 })
 </script>
@@ -142,20 +149,32 @@ watch(selectedProvince, async (province) => {
         <div class="form">
 
             <label>Tỉnh</label>
-            <Dropdown v-model="selectedProvince" :options="provinces" optionLabel="name" placeholder="Chọn tỉnh" />
+            <select v-model="selectedProvince">
+                <option :value="null">Chọn tỉnh</option>
+                <option v-for="p in provinces" :key="p" :value="p">{{ p }}</option>
+            </select>
 
             <label>Huyện</label>
-            <Dropdown v-model="selectedDistrict" :options="districts" optionLabel="name"
-                placeholder="Chọn huyện/thành phố" />
+            <select v-model="selectedDistrict">
+                <option :value="null">Chọn huyện</option>
+                <option v-for="d in districts" :key="d" :value="d">{{ d }}</option>
+            </select>
 
             <label>Xã</label>
-            <Dropdown v-model="selectedWard" :options="wards" optionLabel="name" placeholder="Chọn xã/phường" />
+            <select v-model="selectedWard">
+                <option :value="null">Chọn xã</option>
+                <option v-for="w in wards" :key="w" :value="w">{{ w }}</option>
+            </select>
 
             <div class="buttons">
 
-                <Button label="Convert" icon="pi pi-sync" @click="convertAddress" />
+                <button @click="convertAddress">
+                    Convert
+                </button>
 
-                <Button label="Reset" icon="pi pi-refresh" severity="secondary" @click="resetForm" />
+                <button @click="resetForm">
+                    Reset
+                </button>
 
             </div>
 
@@ -186,10 +205,6 @@ watch(selectedProvince, async (province) => {
     gap: 15px;
 }
 
-.convert-btn {
-    margin-top: 10px;
-}
-
 .result {
     margin-top: 30px;
     padding: 20px;
@@ -201,6 +216,5 @@ watch(selectedProvince, async (province) => {
 .buttons {
     display: flex;
     gap: 10px;
-    margin-top: 10px;
 }
 </style>
