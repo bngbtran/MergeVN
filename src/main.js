@@ -1,24 +1,27 @@
-import { createApp } from "vue";
-import App from "./App.vue";
+import { createApp } from 'vue';
+import App from './App.vue';
+import router from './router';
 
-import PrimeVue from "primevue/config";
+import Aura from '@primeuix/themes/aura';
+import PrimeVue from 'primevue/config';
+import ConfirmationService from 'primevue/confirmationservice';
+import ToastService from 'primevue/toastservice';
 
-import Dropdown from "primevue/dropdown";
-import Button from "primevue/button";
-
-import Aura from "@primevue/themes/aura";
-
-import "primeicons/primeicons.css";
+import '@/assets/tailwind.css';
+import '@/assets/styles.scss';
 
 const app = createApp(App);
 
+app.use(router);
 app.use(PrimeVue, {
-  theme: {
-    preset: Aura,
-  },
+    theme: {
+        preset: Aura,
+        options: {
+            darkModeSelector: '.app-dark'
+        }
+    }
 });
+app.use(ToastService);
+app.use(ConfirmationService);
 
-app.component("Dropdown", Dropdown);
-app.component("Button", Button);
-
-app.mount("#app");
+app.mount('#app');
