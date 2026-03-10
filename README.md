@@ -13,20 +13,9 @@
 
 # Demo
 
-Website: _(thêm link nếu bạn đã deploy)_
+Website: `https://tranbnb-mergevn.vercel.app/`
 
 APK Android: `/public/apk/mergevn.apk`
-
----
-
-# Ảnh giao diện
-
-_(thêm ảnh giao diện ứng dụng tại đây)_
-
-```
-/screenshots/home.png
-/screenshots/converter.png
-```
 
 ---
 
