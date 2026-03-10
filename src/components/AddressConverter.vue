@@ -20,14 +20,6 @@ onMounted(async () => {
         a.name.localeCompare(b.name, "vi")
     )
 
-    provinceData.value = await (
-        await fetch('/data/binhdinh/binhdinh.json')
-    ).json()
-
-    mapData.value = await (
-        await fetch('/data/binhdinh/binhdinh_mapping.json')
-    ).json()
-
     provinceMapping.value = await (
         await fetch('/data/province_mapping.json')
     ).json()
@@ -38,11 +30,7 @@ const districts = computed(() => {
 
     if (!selectedProvince.value || !provinceData.value) return []
 
-    if (selectedProvince.value.name === "Bình Định") {
-        return provinceData.value.districts
-    }
-
-    return []
+    return provinceData.value.districts
 
 })
 
@@ -104,6 +92,15 @@ function resetForm() {
 
 }
 
+function toSlug(name) {
+    return name
+        .toLowerCase()
+        .normalize("NFD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/đ/g, "d")
+        .replace(/\s+/g, "")
+}
+
 watch(selectedDistrict, () => {
     selectedWard.value = null
     result.value = null
@@ -113,6 +110,26 @@ watch(selectedProvince, () => {
     selectedDistrict.value = null
     selectedWard.value = null
     result.value = null
+})
+
+watch(selectedProvince, async (province) => {
+
+    selectedDistrict.value = null
+    selectedWard.value = null
+    result.value = null
+
+    if (!province) return
+
+    const slug = toSlug(province.name)
+
+    provinceData.value = await (
+        await fetch(`/data/${slug}/${slug}.json`)
+    ).json()
+
+    mapData.value = await (
+        await fetch(`/data/${slug}/${slug}_mapping.json`)
+    ).json()
+
 })
 </script>
 
