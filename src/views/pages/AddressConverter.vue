@@ -7,15 +7,11 @@ import { useToast } from 'primevue/usetoast';
 import { computed, onMounted, ref, watch } from 'vue';
 
 const toast = useToast();
-
 const rows = ref([]);
-
 const selectedProvince = ref(null);
 const selectedDistrict = ref(null);
 const selectedWard = ref(null);
-
 const result = ref(null);
-
 const provinceDistrictWard = ref({});
 const provinceMap = ref({});
 const wardMap = ref({});
@@ -50,17 +46,11 @@ function normalizeProvince(name) {
 function buildIndexes() {
     rows.value.forEach((row) => {
         const fullProvince = row.province.replace(/\s*\(\d+\)$/, '').trim();
-
         const oldProvince = normalizeProvince(row.oldProvince);
-
         const district = row.district.replace(/\s*\(\d+\)$/, '').trim();
-
         const oldWard = row.oldWard;
-
         const newWard = row.newWard.replace(/\s*\(\d+\)$/, '').trim();
-
         provinceMap.value[oldProvince] = fullProvince;
-
         const key = `${oldProvince}|${district}|${oldWard}`;
 
         wardMap.value[key] = {
@@ -79,8 +69,6 @@ function buildIndexes() {
         provinceDistrictWard.value[oldProvince][district].push(oldWard);
     });
 }
-
-onMounted(loadData);
 
 const provinces = computed(() => {
     return Object.keys(provinceDistrictWard.value)
@@ -116,14 +104,11 @@ function convertAddress() {
     const oldProvince = selectedProvince.value.name;
     const oldDistrict = selectedDistrict.value.name;
     const oldWard = selectedWard.value.name;
-
     const key = `${oldProvince}|${oldDistrict}|${oldWard}`;
-
     const data = wardMap.value[key];
 
     if (data) {
         const provinceClean = data.province.replace(/\s*\(\d+\)/, '');
-
         result.value = `${data.ward}, ${provinceClean}`;
 
         toast.add({
@@ -168,6 +153,8 @@ watch(selectedDistrict, () => {
     selectedWard.value = null;
     result.value = null;
 });
+
+onMounted(loadData);
 </script>
 
 <template>
@@ -178,25 +165,21 @@ watch(selectedDistrict, () => {
 
         <div>
             <label class="font-bold text-secondary">Tỉnh:</label>
-
             <Select v-model="selectedProvince" :options="provinces" optionLabel="name" placeholder="Chọn tỉnh" filter class="w-full mt-3" />
         </div>
 
         <div>
             <label class="font-bold text-secondary">Huyện:</label>
-
             <Select v-model="selectedDistrict" :options="districts" optionLabel="name" placeholder="Chọn huyện" filter class="w-full mt-3" />
         </div>
 
         <div>
             <label class="font-bold text-secondary">Xã:</label>
-
             <Select v-model="selectedWard" :options="wards" optionLabel="name" placeholder="Chọn xã" filter class="w-full mt-3" />
         </div>
 
         <div class="flex gap-2 mt-2">
             <Button label="Chuyển đổi" icon="pi pi-sync" @click="convertAddress" />
-
             <Button label="Xóa" severity="secondary" icon="pi pi-refresh" @click="resetForm" />
         </div>
     </div>

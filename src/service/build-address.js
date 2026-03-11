@@ -3,13 +3,10 @@ import XLSX from 'xlsx';
 
 const input = './src/assets/data/address.xlsx';
 const output = './public/data/address.json';
-
 const workbook = XLSX.readFile(input);
 const sheet = workbook.Sheets[workbook.SheetNames[0]];
-
 const rows = XLSX.utils.sheet_to_json(sheet);
 
-// Chuẩn hóa dữ liệu (tùy chọn)
 const data = rows.map((r) => ({
     province: r['Tỉnh, thành phố'],
     newWard: r['Tên Xã mới'],
