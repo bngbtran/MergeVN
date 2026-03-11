@@ -207,7 +207,7 @@ watch(selectedDistrict, () => {
         <DataTable :value="tableResult" showGridlines responsiveLayout="scroll">
             <Column field="oldAddress" header="Địa chỉ cũ" headerClass="font-bold">
                 <template #body="{ data }">
-                    <span class="font-medium text-secondary">
+                    <span class="text-secondary">
                         {{ data.oldAddress }}
                     </span>
                 </template>

@@ -51,7 +51,7 @@ function sendEmail() {
 
                         <span>Email:</span>
 
-                        <a href="mailto:tranbnb.2004@gmail.com" class="hover:underline"> tranbnb.2004@gmail.com </a>
+                        <a href="mailto:tranbnb.2004@gmail.com" class="mail text-primary italic"> tranbnb.2004@gmail.com </a>
                     </p>
 
                     <div class="flex items-center gap-4 justify-center lg:justify-start">
@@ -123,3 +123,9 @@ function sendEmail() {
         </div>
     </div>
 </template>
+
+<style>
+.mail:hover {
+    text-decoration: underline;
+}
+</style>

@@ -8,7 +8,7 @@ const { toggleMenu, toggleDarkMode, isDarkTheme } = useLayout();
     <div class="layout-topbar">
         <div class="layout-topbar-logo-container">
             <button class="layout-menu-button layout-topbar-action" @click="toggleMenu">
-                <i class="pi pi-bars"></i>
+                <i class="pi pi-bars text-secondary"></i>
             </button>
             <router-link to="/" class="layout-topbar-logo">
                 <div class="logo flex items-center gap-2">
