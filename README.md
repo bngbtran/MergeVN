@@ -13,18 +13,10 @@
 
 # Demo
 
-Website:
+- Website: [MergeVN](https://tranbnb-mergevn.vercel.app/)
 
-```
-[MergeVN](https://tranbnb-mergevn.vercel.app/)
-```
 
-APK Android:
-
-```
-
-[Download APK](https://github.com/bngbtran/MergeVN_Mobile/releases/download/v1.0/mergevn.apk)
-```
+- APK Android: [Download APK](https://github.com/bngbtran/MergeVN_Mobile/releases/download/v1.0/mergevn.apk)
 
 ---
 
