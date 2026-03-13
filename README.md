@@ -16,13 +16,14 @@
 Website:
 
 ```
-https://tranbnb-mergevn.vercel.app/
+[MergeVN](https://tranbnb-mergevn.vercel.app/)
 ```
 
 APK Android:
 
 ```
-/public/apk/mergevn.apk
+
+[Download APK](https://github.com/bngbtran/MergeVN_Mobile/releases/download/v1.0/mergevn.apk)
 ```
 
 ---
@@ -35,15 +36,10 @@ APK Android:
 - Tra cứu theo **Tỉnh / Huyện / Xã**
 - Hiển thị kết quả ngay lập tức
 
-### Tra cứu nhanh
-
-- Dữ liệu được **index hóa để tối ưu tìm kiếm**
-- Thời gian tra cứu gần như **O(1)**
-
 ### Dữ liệu hành chính được cập nhật
 
 - Tổng hợp dữ liệu địa giới hành chính
-- Hỗ trợ các thay đổi sau khi **sáp nhập hoặc điều chỉnh đơn vị hành chính**
+- Hỗ trợ các thay đổi sau khi **sáp nhập hoặc điều chỉnh đơn vị hành chính** theo quy định sáp nhập 07/2025
 
 ### Hỗ trợ Android
 

@@ -13,7 +13,7 @@ function downloadApk() {
     });
 
     setTimeout(() => {
-        window.open('/apk/mergevn.apk', '_blank');
+        window.open('https://github.com/bngbtran/MergeVN_Mobile/releases/latest/download/mergevn.apk', '_blank');
     }, 500);
 }
 
